@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pubg-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pubg-app
+  template:
+    metadata:
+      labels:
+        app: pubg-app
+    spec:
+      containers:
+      - name: pubg-app
+        image: springio/gs-spring-boot-docker
+        ports:
+        - containerPort: 8080
